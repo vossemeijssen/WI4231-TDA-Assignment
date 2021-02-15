@@ -36,6 +36,11 @@ scatter_coordinates = []
 for i in range(len(data)): 
     for j in range(len(data[i])): 
         if data[i][j] != 0 and i%10 == 0 and j%10 == 0: 
+            """ NOTE!
+            There is a cheat in this line: and i%10 == 0 and j%10 == 0
+            This is done to circumvent the memory issue for now.
+            This creates incorrect results and a solution to this has yet to be found. 
+            """
             scatter_coordinates.append([j/len(data[i]),1 - i/len(data)])
 
 scatter_coordinates = np.array(scatter_coordinates)          
