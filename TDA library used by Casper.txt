@@ -1,0 +1,3 @@
+link: https://scikit-tda.org/libraries.html
+
+command prompt: pip install ripser
