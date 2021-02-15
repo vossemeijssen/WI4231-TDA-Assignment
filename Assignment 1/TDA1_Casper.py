@@ -35,7 +35,8 @@ scatter_coordinates = []
 
 for i in range(len(data)): 
     for j in range(len(data[i])): 
-        if data[i][j] != 0 and i%10 == 0 and j%10 == 0: 
+        # if data[i][j] != 0:
+        if data[i][j] != 0 and i%2 == 0 and j%2 == 0: 
             """ NOTE!
             There is a cheat in this line: and i%10 == 0 and j%10 == 0
             This is done to circumvent the memory issue for now.
@@ -68,7 +69,7 @@ epsilon = H0_dgm[-3][1]
 if plotting == True: 
     figure_cluster, ax_cluster = plt.subplots(figsize = (10,10),dpi = 300)
     for i in range(len(scatter_x)): 
-        circle = plt.Circle((scatter_x[i],scatter_y[i]),epsilon,linewidth = 0.1,color = 'black',alpha = 0.5)
+        circle = plt.Circle((scatter_x[i],scatter_y[i]),epsilon/2,color = 'black',alpha = 0.05)
         ax_cluster.add_patch(circle)
 
 
